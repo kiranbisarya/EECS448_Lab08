@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #text {
+          border: thick solid white;
+        }
+        </style>
+        </head>
+<body>
+
+<div id="text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae vestibulum turpis, vel accumsan tortor. Cras 
+    sodales dui tincidunt magna vehicula tristique. Vestibulum tempus, lacus sed sagittis hendrerit, nisi massa eleifend quam, 
+    quis molestie enim purus ut erat. Proin porttitor hendrerit elementum. Pellentesque habitant morbi tristique senectus et 
+    netus et malesuada fames ac turpis egestas. Aenean faucibus nisi orci. Proin porta eros at ante facilisis, non porta metus 
+    egestas. 
+</div>
+
+
+<p>Enter Colors in Hex Values (00-ff) </p>
+<p>Enter Width in a number (100)</p>
+
+<h2>Border Colors: </h2>
+
+<label>Enter Red Value</label>
+<input type="text" id="redValueBorder"><br><br>
+
+<label>Enter Green Value</label>
+<input type="text" id="greenValueBorder"><br><br>
+
+<label>Enter Blue Value</label>
+<input type="text" id="blueValueBorder"><br><br>
+
+<label>Enter Width Value</label>
+<input type="text" id="widthValueBorder"><br><br>
+
+<br>
+
+<h2>Background Colors: </h2>
+
+<label>Enter Red Value</label>
+<input type="text" id="redValueBackground"><br><br>
+
+<label>Enter Green Value</label>
+<input type="text" id="greenValueBackground"><br><br>
+
+<label>Enter Blue Value</label>
+<input type="text" id="blueValueBackground"><br><br>
+
+<label>Enter Width Value</label>
+<input type="text" id="widthValueBackground"><br><br>
+
+<button onclick="myFunc()">Update Text</button>
+
+
+<script>
+
+    function myFunc()
+    {
+        var text = document.getElementById("text");    
+
+        var borderRed = document.getElementById("redValueBorder").value;
+        var borderGreen = document.getElementById("greenValueBorder").value;
+        var borderBlue = document.getElementById("blueValueBorder").value;
+        var borderWidth = document.getElementById("widthValueBorder").value;
+
+        var backgroundRed = document.getElementById("redValueBackground").value;
+        var backgroundGreen = document.getElementById("greenValueBackground").value;
+        var backgroundBlue = document.getElementById("blueValueBackground").value;
+        var backgroundWidth = document.getElementById("widthValueBackground").value;
+
+        var hexBackground = '#' + backgroundRed + backgroundGreen + backgroundBlue;
+        var hexBorder = '#' + borderRed + borderGreen + borderBlue;
+
+        text.style.backgroundColor = hexBackground;
+        text.style.borderColor = hexBorder;
+     
+
+        text.style.width = backgroundWidth + "px";
+        text.style.borderWidth = borderWidth + "px";       
+    }
+    
+
+
+</script>
+
+
+
+</body>
+</html>
+

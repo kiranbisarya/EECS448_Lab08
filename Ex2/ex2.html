@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Exercise 2</h1>
+
+<img class="jayhawks" src="1912.jpg">
+<img class="jayhawks" src="1923.jpg">
+<img class="jayhawks" src="1929.jpg">
+<img class="jayhawks" src="1941.jpg">
+<img class="jayhawks" src="1946.jpg">
+
+<button class="left" onclick="nextSlide(-1)">Previous</button>
+<button class="right" onclick="nextSlide(+1)">Next</button>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function nextSlide(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var x = document.getElementsByClassName("jayhawks");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+</script>
+
+<style>
+  img {
+    width:  450px;
+    height: 550px;
+    
+  }
+</style>
+
+</body>
+</html>
+
